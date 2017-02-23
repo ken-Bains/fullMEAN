@@ -1,0 +1,18 @@
+<input type="text" placeholder="search" ng-model="userFilter">
+<table>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>update</th>
+			<th>delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in users.user | filter:userFilter">
+			<td><a href="#!/user/{{user._id}}">{{user.first}}</a></td>
+			<td><a href="#!/edit/{{user._id}}">edit</a></td>
+			<td><input type="button" ng-click="removeUser(user._id)" value="delete"></td>
+		</tr>
+	</tbody>
+</table>
+<a href="#!/new" title="">Add New User</a>
